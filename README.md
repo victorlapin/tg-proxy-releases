@@ -28,7 +28,7 @@ issue tracker и история коммитов живут отдельно.
 ## Исходный код
 
 - Android-приложение: репозиторий приватный, обращаться к
-  [@victorlapin](https://gitlab.com/victorlapin).
+  [@victorlapin](https://github.com/victorlapin).
 - Скриптовый движок (Python): [Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy).
 
 ## Лицензия
