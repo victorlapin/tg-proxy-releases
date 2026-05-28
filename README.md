@@ -9,7 +9,7 @@ issue tracker и история коммитов живут отдельно.
 
 ## Скачать
 
-Последняя сборка: [Releases](https://gitlab.com/victorlapin/tg-proxy-releases/-/releases)
+Последняя сборка: [Releases](../../releases)
 
 Подойдёт устройство с Android 8.0 (API 26) или новее.
 
@@ -18,7 +18,7 @@ issue tracker и история коммитов живут отдельно.
 
 ## Установка
 
-1. Скачать APK со страницы [Releases](https://gitlab.com/victorlapin/tg-proxy-releases/-/releases).
+1. Скачать APK со страницы [Releases](../../releases).
 2. Открыть файл — система предложит включить установку из неизвестных
    источников для приложения, через которое скачали (Chrome, Telegram,
    менеджер файлов).
