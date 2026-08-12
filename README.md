@@ -28,6 +28,9 @@ issue tracker и история коммитов живут отдельно.
 ## Документация
 
 - [Несколько профилей для разных сетей](PROFILES.md)
+- [Личные Cloudflare-воркеры](CF-WORKERS.md)
+- [Режим SOCKS5](SOCKS5.md)
+- [Решение проблем](TROUBLESHOOTING.md)
 
 ## Исходный код
 
