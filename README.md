@@ -9,7 +9,7 @@ issue tracker и история коммитов живут отдельно.
 
 ## Скачать
 
-Последняя сборка: [Releases](https://github.com/victorlapin/tg-proxy-releases/releases/latest)
+**[Скачать последнюю версию](https://github.com/victorlapin/tg-proxy-releases/releases/latest)**
 
 Подойдёт устройство с Android 8.0 (API 26) или новее.
 
@@ -27,10 +27,14 @@ issue tracker и история коммитов живут отдельно.
 
 ## Документация
 
-- [Несколько профилей для разных сетей](PROFILES.md)
-- [Личные Cloudflare-воркеры](CF-WORKERS.md)
-- [Режим SOCKS5](SOCKS5.md)
-- [Решение проблем](TROUBLESHOOTING.md)
+- [Профили для разных сетей](PROFILES.md) — варианты пути до Telegram под
+  конкретную сеть: дом, работа, «тяжёлый» оператор.
+- [Личные Cloudflare-воркеры](CF-WORKERS.md) — свой релей, когда встроенный
+  обход через общие домены Cloudflare не справляется.
+- [Режим SOCKS5](SOCKS5.md) — альтернативный режим подключения, если сеть
+  режет переупакованный WebSocket.
+- [Решение проблем](TROUBLESHOOTING.md) — если что-то пошло не так,
+  начните отсюда.
 
 ## Исходный код
 
