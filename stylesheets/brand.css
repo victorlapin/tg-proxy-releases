@@ -1,0 +1,96 @@
+/* Палитра из темы приложения (app/src/main/java/.../ui/theme/Color.kt).
+ * Source-цвет M3: #0288D1 (Cyan 700). */
+:root {
+  /* primaryLight — шапка/кнопки в светлой теме */
+  --md-primary-fg-color: #00557D;
+  --md-primary-fg-color--light: #0288D1;
+  --md-primary-fg-color--dark: #004C68;
+  /* source-цвет — ссылки и hover-акценты */
+  --md-accent-fg-color: #0288D1;
+  /* Ссылки = primaryLight (не акцент): консистентно с приложением,
+     8.1:1 на белом. Отдельно от шапки, см. slate-блок. */
+  --md-typeset-a-color: #00557D;
+}
+
+[data-md-color-scheme="slate"] {
+  /* primaryContainerDark — тёмная шапка вместо дефолтного серо-белого */
+  --md-primary-fg-color: #004C68;
+  --md-primary-fg-color--light: #0288D1;
+  --md-primary-fg-color--dark: #003549;
+  /* primaryDark — hover-акценты */
+  --md-accent-fg-color: #82CFFF;
+  /* Ссылки в тексте: primaryDark из приложения, ~10:1 на тёмном фоне.
+     Отдельная переменная нужна потому, что --md-typeset-a-color по
+     дефолту наследует --md-primary-fg-color (цвет шапки), а у нас
+     шапка тёмная и primary для ссылок непригоден. */
+  --md-typeset-a-color: #82CFFF;
+}
+
+/* --- Кнопки (.md-button на главной): Material 3 pill + явный контраст.
+   Проблемы дефолта: (1) вторичная кнопка красится в --md-primary-fg-color
+   (у нас это цвет шапки — в slate тёмное на тёмном); (2) hover-правило
+   темы заливает акцентом, а --md-accent-bg-color (текст на ней) темой
+   не определён → наследуется цвет страницы; (3) border-radius .1rem.
+   Поэтому цвета заданы явно, по ролям приложения: light = primary/
+   onPrimary, slate = primaryDark/onPrimaryDark (filled-кнопка тёмной
+   темы приложения). Селекторы с .md-typeset — чтобы перебить hover-
+   правила темы по специфичности+порядку. --- */
+
+/* Базовое правило темы — .md-typeset .md-button (0,2,0): селектор без
+   .md-typeset проигрывает по специфичности независимо от порядка
+   загрузки, поэтому пилюля обязана быть тут же с этим префиксом. */
+.md-typeset .md-button {
+  border-radius: 9999px;            /* M3-пилюля */
+  font-weight: 500;
+  padding: 0.64em 1.75em;
+}
+
+.md-typeset .md-button--primary {
+  background-color: #00557D;        /* primaryLight */
+  color: #FFFFFF;                   /* onPrimaryLight */
+}
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+  background-color: #0288D1;        /* source-цвет, светлее на hover */
+  color: #FFFFFF;
+}
+
+.md-typeset .md-button:not(.md-button--primary) {
+  border-color: #00557D;
+  color: #00557D;
+}
+.md-typeset .md-button:not(.md-button--primary):hover,
+.md-typeset .md-button:not(.md-button--primary):focus {
+  background-color: transparent;
+  border-color: #0288D1;
+  color: #0288D1;
+}
+
+/* В slate — M3 tonal-вариант: заливка primaryContainerDark + текст
+   onPrimaryContainerDark из палитры приложения (~7:1). Залитая
+   primaryDark-плашка (#82CFFF) на тёмном фоне выглядит слишком ярко. */
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary {
+  background-color: #004C68;        /* primaryContainerDark */
+  color: #C2E8FF;                   /* onPrimaryContainerDark */
+}
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary:hover,
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary:focus {
+  background-color: #005C82;        /* контейнер чуть светлее на hover */
+  color: #C2E8FF;
+}
+
+/* Outlined в slate — СРЕДНИЙ тон (source-цвет), не on-container:
+   контейнер #004C68 и его on-цвет #C2E8FF одинаковы по hue, но далеко
+   по светлоте — пара читалась как «две разные кнопки». #0288D1 (~4.4:1)
+   сидит между ними и связывает пару в одно семейство. Вторичных кнопок
+   на странице сейчас нет; стили оставлены как выверенный шаблон. */
+[data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary) {
+  border-color: #0288D1;
+  color: #0288D1;
+}
+[data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary):hover,
+[data-md-color-scheme="slate"] .md-typeset .md-button:not(.md-button--primary):focus {
+  background-color: transparent;
+  border-color: #82CFFF;
+  color: #82CFFF;
+}
